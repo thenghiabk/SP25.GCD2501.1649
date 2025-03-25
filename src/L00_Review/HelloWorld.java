@@ -111,22 +111,60 @@ public class HelloWorld {
          * See more: https://www.w3schools.com/java/java_loop_while.asp
          */
 
-        while(true)
-        {
-            Scanner scanner = new Scanner( System.in );
-            System.out.println("What's your name? ");
-            String name = scanner.nextLine();
-            System.out.println("Hello " + name);
+        //while(true)
+        //{
+        //    Scanner scanner = new Scanner( System.in );
+        //    System.out.println("What's your name? ");
+        //    String name = scanner.nextLine();
+        //    System.out.println("Hello " + name);
+        //
+        //    System.out.println("Do you want to continue (y/n)? ");
+        //    String response = scanner.nextLine();
+        //
+        //    if (response.equalsIgnoreCase("n")) {
+        //        System.out.println("Goodbye!");
+        //        break;
+        //    }
+        //}
 
-            System.out.println("Do you want to continue (y/n)? ");
-            String response = scanner.nextLine();
+        /*
+         * Example 8: For loops
+         * See more: https://www.w3schools.com/java/java_loop_for.asp
+         */
 
-            if (response.equalsIgnoreCase("n")) {
-                System.out.println("Goodbye!");
-                break;
-            }
+        //for (int i = 0; i < 10; i++) {
+        //
+        //    if (i == 5) {
+        //        break;
+        //    }
+        //
+        //    System.out.println( "i = " + i + ": Hello World." );
+        //}
+
+
+        /*
+         * Example 9: Arrays
+         * See more: https://www.w3schools.com/java/java_arrays.asp
+         */
+
+        //int[] x = new int[10];
+        //x[0] = 10;
+        //x[1] = 20;
+        //x[2] = 30;
+        //x[3] = 40;
+        //x[4] = 50;
+        //x[5] = 60;
+
+        //for(int i = 0; i < x.length; i++){
+        //    System.out.println(x[i]);
+        //}
+
+        String[] names = { "John", "Jane", "Joe", "Jill", "Jack", "Lucy" };
+        System.out.println(names.length);
+
+        for(int i = 0; i < names.length; i++){
+            System.out.println(names[i]);
         }
-
 
 
     }
