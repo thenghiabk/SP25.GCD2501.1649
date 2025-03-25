@@ -62,17 +62,72 @@ public class HelloWorld {
          * See more: https://www.w3schools.com/java/java_conditions_elseif.asp
          */
 
-        Scanner scanner = new Scanner( System.in );
-        System.out.println("What time is it? ");
-        int time = Integer.parseInt( scanner.nextLine() ) ;
+        //Scanner scanner = new Scanner( System.in );
+        //System.out.println("What time is it? ");
+        //int time = Integer.parseInt( scanner.nextLine() ) ;
+        //
+        //if (time < 10) {
+        //    System.out.println("Good morning.");
+        //} else if (time < 18) {
+        //    System.out.println("Good day.");
+        //} else {
+        //    System.out.println("Good evening.");
+        //}
 
-        if (time < 10) {
-            System.out.println("Good morning.");
-        } else if (time < 18) {
-            System.out.println("Good day.");
-        } else {
-            System.out.println("Good evening.");
+        /*
+         * Example 6: Switch statements
+         * See more: https://www.w3schools.com/java/java_switch.asp
+         */
+        //Scanner scanner = new Scanner( System.in );
+        //System.out.println("What's your favorite day (1-7)? ");
+        //int day = Integer.parseInt( scanner.nextLine() );
+        //
+        //switch (day) {
+        //    case 1:
+        //        System.out.println("Monday");
+        //        break;
+        //    case 2:
+        //        System.out.println("Tuesday");
+        //        break;
+        //    case 3:
+        //        System.out.println("Wednesday");
+        //        break;
+        //    case 4:
+        //        System.out.println("Thursday");
+        //        break;
+        //    case 5:
+        //        System.out.println("Friday");
+        //        break;
+        //    case 6:
+        //        System.out.println("Saturday");
+        //        break;
+        //    case 7:
+        //        System.out.println("Sunday");
+        //        break;
+        //}
+
+        /*
+         * Example 7: While loops
+         * See more: https://www.w3schools.com/java/java_loop_while.asp
+         */
+
+        while(true)
+        {
+            Scanner scanner = new Scanner( System.in );
+            System.out.println("What's your name? ");
+            String name = scanner.nextLine();
+            System.out.println("Hello " + name);
+
+            System.out.println("Do you want to continue (y/n)? ");
+            String response = scanner.nextLine();
+
+            if (response.equalsIgnoreCase("n")) {
+                System.out.println("Goodbye!");
+                break;
+            }
         }
+
+
 
     }
 }
