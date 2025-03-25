@@ -1,32 +1,45 @@
 package L00_Review;
 
+import java.util.Scanner;
+
 public class HelloWorld {
     public static void main ( String[] args ) {
-        //System.out.print("Hello World! ");
-        //System.out.print("I will print on the same line.\n");
-        //
-        //System.out.println("345 + 6 = " + (345 + 6));
+        /*
+         * Example 1: Output
+         * See more: https://www.w3schools.com/java/java_output.asp
+         */
+        //System.out.println("Hello World!");
+        //System.out.println(2025);
+        //System.out.println("Hello " + 2025);
+        //System.out.println("Next year: " + (2025+1));
+
+        /*
+         * Example 2: Variables
+         * See more: https://www.w3schools.com/java/java_variables.asp
+         */
+
+        //int x = 3;
+        //System.out.println("x = " + x); // 3
+        //System.out.println("x * 5 = " + (x*5)); // 15
 
         //String name = "John";
-        //System.out.println(name);
+        //System.out.println("Hello " + name); // Hello John
 
-        //int myNum = 15;
-        //System.out.println(myNum+5);
+        /*
+         * Example: Input
+         * See more: https://www.w3schools.com/java/java_user_input.asp
+         */
+        Scanner scanner = new Scanner( System.in );
+        System.out.println("What's your name? ");
+        String name = scanner.nextLine();
+        System.out.println("Hello " + name);
 
-        //int myNum = 5;
-        //float myFloatNum = 5.99f;
-        //char myLetter = 'D';
-        //boolean myBool = true;
-        //String myText = "Hello";
+        System.out.println("How old are you? ");
+        String ageString = scanner.nextLine();
 
-        int x = 20;
-        int y = 20;
+        int age = Integer.parseInt(ageString);
 
-        if (x > y) {
-            System.out.println("X is greater than Y");
-        } else {
-            System.out.println("X is not greater than Y");
-        }
-
+        System.out.println("You are " + age + " years old.");
+        System.out.println("I guess you were born in " + (2025 - age));
     }
 }
