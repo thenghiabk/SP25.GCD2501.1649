@@ -26,20 +26,53 @@ public class HelloWorld {
         //System.out.println("Hello " + name); // Hello John
 
         /*
-         * Example: Input
+         * Example 3: Input
          * See more: https://www.w3schools.com/java/java_user_input.asp
          */
+        //Scanner scanner = new Scanner( System.in );
+        //System.out.println("What's your name? ");
+        //String name = scanner.nextLine();
+        //System.out.println("Hello " + name);
+        //
+        //System.out.println("How old are you? ");
+        //String ageString = scanner.nextLine();
+        //
+        //int age = Integer.parseInt(ageString);
+        //
+        //System.out.println("You are " + age + " years old.");
+        //System.out.println("I guess you were born in " + (2025 - age));
+
+        /*
+         * Example 4: Booleans
+         * See more: https://www.w3schools.com/java/java_booleans.asp
+         */
+
+        //int x = 3;
+        //int y = 5;
+        //
+        //boolean result = x > y;
+        //
+        //System.out.println("x > y: " + result); // false
+        //System.out.println("x < y: " + (x < y)); // true
+        //System.out.println("x == y: " + (x == y)); // false
+        //System.out.println("x != y: " + (x != y)); // true
+
+        /*
+         * Example 5: If statements
+         * See more: https://www.w3schools.com/java/java_conditions_elseif.asp
+         */
+
         Scanner scanner = new Scanner( System.in );
-        System.out.println("What's your name? ");
-        String name = scanner.nextLine();
-        System.out.println("Hello " + name);
+        System.out.println("What time is it? ");
+        int time = Integer.parseInt( scanner.nextLine() ) ;
 
-        System.out.println("How old are you? ");
-        String ageString = scanner.nextLine();
+        if (time < 10) {
+            System.out.println("Good morning.");
+        } else if (time < 18) {
+            System.out.println("Good day.");
+        } else {
+            System.out.println("Good evening.");
+        }
 
-        int age = Integer.parseInt(ageString);
-
-        System.out.println("You are " + age + " years old.");
-        System.out.println("I guess you were born in " + (2025 - age));
     }
 }
