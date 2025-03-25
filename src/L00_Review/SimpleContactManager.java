@@ -11,9 +11,10 @@ public class SimpleContactManager {
         // Define the maximum number of contacts.
         final int MAX_CONTACTS = 100;
 
-        // Create parallel arrays to store names and phone numbers.
+        // Create parallel arrays to store names, phone numbers and emails
         String[] names = new String[MAX_CONTACTS];
         String[] phoneNumbers = new String[MAX_CONTACTS];
+        String[] emails = new String[MAX_CONTACTS];
 
         // Keep track of the number of contacts currently stored.
         int numContacts = 0;
@@ -27,17 +28,22 @@ public class SimpleContactManager {
             System.out.println("4. Exit");
             System.out.print("Enter your choice: ");
 
-            int choice = input.nextInt();
-            input.nextLine(); // Consume the newline character
+            int choice = Integer.parseInt( input.nextLine() );
 
             switch (choice) {
                 case 1: // Add Contact
                     if (numContacts < MAX_CONTACTS) {
                         System.out.print("Enter contact name: ");
                         names[numContacts] = input.nextLine();
+
                         System.out.print("Enter phone number: ");
                         phoneNumbers[numContacts] = input.nextLine();
-                        numContacts++;
+
+                        System.out.print("Enter email: ");
+                        emails[numContacts] = input.nextLine();
+
+                        numContacts++; // ~ numContact = numContact + 1
+
                         System.out.println("Contact added!");
                     } else {
                         System.out.println("Contact list is full!");
@@ -50,23 +56,28 @@ public class SimpleContactManager {
                         System.out.println("No contacts to display.");
                     } else {
                         for (int i = 0; i < numContacts; i++) {
-                            System.out.println("Name: " + names[i] + ", Phone: " + phoneNumbers[i]);
+                            System.out.println("Name: " + names[i] + ", Phone: " + phoneNumbers[i] + ", Email: " + emails[i]);
                         }
                     }
                     break;
 
                 case 3: // Search Contacts
                     System.out.print("Enter name to search: ");
+
                     String searchName = input.nextLine();
+
                     boolean found = false;
+
                     for (int i = 0; i < numContacts; i++) {
                         // Use equalsIgnoreCase for case-insensitive search
                         if (names[i] != null && names[i].equalsIgnoreCase(searchName)) {
-                            System.out.println("Name: " + names[i] + ", Phone: " + phoneNumbers[i]);
+                            System.out.println("Name: " + names[i] + ", Phone: " + phoneNumbers[i] + ", Email: " + emails[i]);
                             found = true;
+                            break;
                         }
                     }
-                    if (!found) {
+
+                    if (!found) { // ~ found == false
                         System.out.println("Contact not found.");
                     }
                     break;
