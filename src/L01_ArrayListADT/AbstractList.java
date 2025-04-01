@@ -1,4 +1,4 @@
-package L01_ArrayList;
+package L01_ArrayListADT;
 
 /**
  * This interface is a blueprint for a list data structure. It provides methods for

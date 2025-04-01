@@ -1,4 +1,4 @@
-package L01_ArrayList;
+package L01_ArrayListADT;
 
 import java.util.ArrayList;
 
