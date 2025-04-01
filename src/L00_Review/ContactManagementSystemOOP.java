@@ -44,12 +44,6 @@ class Contact {
         System.out.println("Name: " + name + ", Phone Number: " + phoneNumber + ", Email: " + email);
     }
 
-    public void editContact(String newName, String newPhoneNumber, String newEmail){
-        this.name = newName;
-        this.phoneNumber = newPhoneNumber;
-        setEmail( newEmail );
-    }
-
     public boolean findContactByName(String searchName){
         if(this.name.equalsIgnoreCase( searchName )) {
             return true;
@@ -58,7 +52,7 @@ class Contact {
         }
     }
 
-    public void updateInfo ( String newPhoneNumber, String newEmail ) {
+    public void updateInfo( String newPhoneNumber, String newEmail ) {
         this.phoneNumber = newPhoneNumber;
         setEmail( newEmail );
     }
