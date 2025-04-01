@@ -2,7 +2,7 @@ package L00_Review;
 
 import java.util.Scanner;
 
-public class SimpleContactManager {
+public class ContactManagementSystemProcedural {
 
     public static void main(String[] args) {
 
