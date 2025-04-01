@@ -49,6 +49,14 @@ class Contact {
         this.phoneNumber = newPhoneNumber;
         setEmail( newEmail );
     }
+
+    public boolean findContactByName(String searchName){
+        if(this.name.equalsIgnoreCase( searchName )) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
 
 public class ContactManagementSystemOOP {
@@ -58,11 +66,6 @@ public class ContactManagementSystemOOP {
 
         // Define the maximum number of contacts.
         final int MAX_CONTACTS = 100;
-
-        // Create parallel arrays to store names, phone numbers and emails
-        //String[] names = new String[MAX_CONTACTS];
-        //String[] phoneNumbers = new String[MAX_CONTACTS];
-        //String[] emails = new String[MAX_CONTACTS];
 
         // Create an array of contacts
         Contact[] contacts = new Contact[MAX_CONTACTS];
@@ -76,7 +79,8 @@ public class ContactManagementSystemOOP {
             System.out.println("1. Add Contact");
             System.out.println("2. View Contacts");
             System.out.println("3. Search Contacts");
-            System.out.println("4. Exit");
+            System.out.println("4. Edit Contact");
+            System.out.println("5. Exit");
             System.out.print("Enter your choice: ");
 
             int choice = Integer.parseInt( input.nextLine() );
@@ -111,33 +115,37 @@ public class ContactManagementSystemOOP {
                         System.out.println("No contacts to display.");
                     } else {
                         for (int i = 0; i < numContacts; i++) {
-                            System.out.println("Name: " + names[i] + ", Phone: " + phoneNumbers[i] + ", Email: " + emails[i]);
+                            contacts[i].displayInfo();
                         }
                     }
                     break;
 
                 case 3: // Search Contacts
-                    //System.out.print("Enter name to search: ");
-                    //
-                    //String searchName = input.nextLine();
-                    //
-                    //boolean found = false;
-                    //
-                    //for (int i = 0; i < numContacts; i++) {
-                    //    // Use equalsIgnoreCase for case-insensitive search
-                    //    if (names[i] != null && names[i].equalsIgnoreCase(searchName)) {
-                    //        System.out.println("Name: " + names[i] + ", Phone: " + phoneNumbers[i] + ", Email: " + emails[i]);
-                    //        found = true;
-                    //        break;
-                    //    }
-                    //}
-                    //
-                    //if (!found) { // ~ found == false
-                    //    System.out.println("Contact not found.");
-                    //}
+                    System.out.print("Enter name to search: ");
+
+                    String searchName = input.nextLine();
+
+                    boolean found = false;
+
+                    for (int i = 0; i < numContacts; i++) {
+                        // Use equalsIgnoreCase for case-insensitive search
+                        if (contacts[i].findContactByName(searchName)) {
+                            contacts[i].displayInfo();
+                            found = true;
+                            break;
+                        }
+                    }
+
+                    if (!found) { // ~ found == false
+                        System.out.println("Contact not found.");
+                    }
                     break;
 
-                case 4: // Exit
+                case 4:
+                    // TODO: Edit Contact
+                    break;
+
+                case 5: // Exit
                     System.out.println("Exiting... Goodbye!");
                     input.close();
                     return; // Exit the main method (and the program)
