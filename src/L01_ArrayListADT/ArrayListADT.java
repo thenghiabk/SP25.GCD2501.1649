@@ -14,9 +14,20 @@ public class ArrayListADT implements AbstractList {
 
     @Override
     public boolean add ( int element ) {
+
+        if(nextIndex == elements.length){
+            int[] newElements = new int[elements.length * 2];
+
+            for ( int i = 0; i < nextIndex; i++ ) {
+                newElements[i] = elements[i];
+            }
+
+            elements = newElements;
+        }
+
         elements[nextIndex] = element;
         nextIndex++;
-        return false;
+        return true;
     }
 
     @Override
@@ -73,6 +84,8 @@ class ArraylistADTRunner {
         myArrayList.add(20);
         myArrayList.add(30);
         myArrayList.add(40);
+        myArrayList.add(50);
+        myArrayList.add(60);
 
         myArrayList.displayInfo();
     }
