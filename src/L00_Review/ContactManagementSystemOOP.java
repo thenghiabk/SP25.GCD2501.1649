@@ -57,6 +57,11 @@ class Contact {
             return false;
         }
     }
+
+    public void updateInfo ( String newPhoneNumber, String newEmail ) {
+        this.phoneNumber = newPhoneNumber;
+        setEmail( newEmail );
+    }
 }
 
 public class ContactManagementSystemOOP {
@@ -141,8 +146,32 @@ public class ContactManagementSystemOOP {
                     }
                     break;
 
-                case 4:
-                    // TODO: Edit Contact
+                case 4: // Edit Contact
+                    System.out.print("Enter contact name to edit: ");
+                    String contactName = input.nextLine();
+
+                    boolean contactFound = false;
+
+                    for (int i = 0; i < numContacts; i++) {
+
+                        if(contacts[i].findContactByName( contactName )){
+                            System.out.print("Enter new phone number: ");
+                            String newPhoneNumber = input.nextLine();
+
+                            System.out.print("Enter new email: ");
+                            String newEmail = input.nextLine();
+
+                            // Found the contact and update the contact
+                            contacts[i].updateInfo(newPhoneNumber, newEmail);
+
+                            contactFound = true;
+                            break;
+                        }
+                    }
+
+                    if(contactFound == false) {
+                        System.out.println("Contact not found.");
+                    }
                     break;
 
                 case 5: // Exit
