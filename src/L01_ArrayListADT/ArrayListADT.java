@@ -1,7 +1,5 @@
 package L01_ArrayListADT;
 
-import java.util.Arrays;
-
 public class ArrayListADT implements AbstractList {
     private int[] elements;
 
