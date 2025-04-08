@@ -1,20 +1,20 @@
 package L01_ArrayListADT;
 
-public class ArrayListADT implements AbstractList {
-    private int[] elements;
+public class ArrayListADT<E> implements AbstractList<E> {
+    private E[] elements;
 
     private int nextIndex;
 
     public ArrayListADT () {
-        elements = new int[5];
+        elements = (E[]) new Object[5];
         nextIndex = 0;
     }
 
     @Override
-    public boolean add ( int element ) {
+    public boolean add ( E element ) {
 
         if(nextIndex == elements.length){
-            int[] newElements = new int[elements.length * 2];
+            E[] newElements = (E[]) new Object[elements.length * 2];
 
             for ( int i = 0; i < nextIndex; i++ ) {
                 newElements[i] = elements[i];
@@ -29,23 +29,23 @@ public class ArrayListADT implements AbstractList {
     }
 
     @Override
-    public boolean add ( int index, int element ) {
+    public boolean add ( int index, E element ) {
         return false;
     }
 
     @Override
-    public int get ( int index ) {
-        return 0;
+    public E get ( int index ) {
+        return null;
     }
 
     @Override
-    public int set ( int index, int element ) {
-        return 0;
+    public E set ( int index, int element ) {
+        return null;
     }
 
     @Override
-    public int remove ( int index ) {
-        return 0;
+    public E remove ( int index ) {
+        return null;
     }
 
     @Override
@@ -54,12 +54,12 @@ public class ArrayListADT implements AbstractList {
     }
 
     @Override
-    public int indexOf ( int element ) {
+    public int indexOf ( E element ) {
         return 0;
     }
 
     @Override
-    public boolean contains ( int element ) {
+    public boolean contains ( E element ) {
         return false;
     }
 
@@ -77,7 +77,7 @@ public class ArrayListADT implements AbstractList {
 
 class ArraylistADTRunner {
     public static void main ( String[] args ) {
-        ArrayListADT myArrayList = new ArrayListADT( );
+        ArrayListADT<Integer> myArrayList = new ArrayListADT( );
         myArrayList.add(10);
         myArrayList.add(20);
         myArrayList.add(30);
@@ -86,5 +86,13 @@ class ArraylistADTRunner {
         myArrayList.add(60);
 
         myArrayList.displayInfo();
+
+        ArrayListADT<String> myStringArrayList = new ArrayListADT( );
+        myStringArrayList.add("Hello");
+        myStringArrayList.add("World");
+        myStringArrayList.add("!");
+        myStringArrayList.add("Goodbye");
+
+        myStringArrayList.displayInfo();
     }
 }
