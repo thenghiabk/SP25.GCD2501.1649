@@ -1,6 +1,6 @@
 package L03_LinkedListADT;
 
-public interface AbtractLinkedList<E> {
+public interface AbstractLinkedList<E> {
     /**
      * Adds an element at the front of the collection and increases the size.
      *

@@ -1,6 +1,6 @@
 package L03_LinkedListADT;
 
-public class LinkedListADT<E> implements AbtractLinkedList<E> {
+public class LinkedListADT<E> implements AbstractLinkedList<E> {
     // The head of the linked list
     private Node head;
     // The tail of the linked list
