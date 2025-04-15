@@ -32,7 +32,7 @@ public interface AbstractList<E> {
      * @param element the element to be added
      * @return the element that was replaced
      */
-    E set(int index, int element);
+    E set(int index, E element);
     /**
      * Removes the element at the specified position in the list and decreases the size.
      * @param index the position of the element to be removed
