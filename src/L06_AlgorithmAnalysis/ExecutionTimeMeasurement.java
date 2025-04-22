@@ -26,13 +26,13 @@ public class ExecutionTimeMeasurement {
         int numOfLoop = 50_000;
 
         // Record start time
-        long startTime = System.currentTimeMillis();
+        long startTime = System.nanoTime();
 
         // Execute repeat1 function
         repeat1("A", numOfLoop);
 
         // Record end time
-        long endTime = System.currentTimeMillis();
+        long endTime = System.nanoTime();
 
         // Calculate elapsed time in milliseconds
         long elapsedTime = endTime - startTime;
